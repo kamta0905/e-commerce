@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import Skeleton from "react-loading-skeleton";
 import { Link } from "react-router-dom";
+import Header from "./Header";
 const Products = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -15,7 +16,6 @@ const Products = () => {
         setData(await res.clone().json());
         setFilter(await res.json());
         setLoading(false);
-        console.log(filter);
       }
       return () => {
         componentMounted = false;
@@ -68,7 +68,7 @@ const Products = () => {
         </div>
         {filter.map((Item) => {
           return (
-            <div className="col-md-3 mb-4">
+            <div className="col-md-3 mb-4" key={Item.id}>
               <Card className="text-center p-4">
                 <Card.Img variant="top" style={{ height: "250px" }} src={Item.image} />
                 <Card.Body>
@@ -87,6 +87,7 @@ const Products = () => {
   };
   return (
     <div>
+      <Header />
       <div className="container my-5 py-5 ">
         <div className="row ">
           <div className="col-12 mb-5">

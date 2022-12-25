@@ -1,8 +1,11 @@
 import React from "react";
 import { Nav, Button, Form, NavDropdown, Navbar, Container } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 const Header = () => {
   const path = useLocation();
+  const state = useSelector((state) => state.handleCart);
+
   return (
     <div>
       <Navbar className="fixed-top" bg="light" expand="lg">
@@ -25,7 +28,7 @@ const Header = () => {
               {/* <Form.Control type="search" placeholder="Search" className="me-2" aria-label="Search" />
               <Button variant="outline-success">Search</Button> */}
               <Link className={path.pathname === "/cart" ? "nav-link active ms-3" : "ms-3 nav-link"} to="/cart">
-                Cart
+                Cart({state?.length})
               </Link>
             </Form>
           </Navbar.Collapse>
