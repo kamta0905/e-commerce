@@ -39,6 +39,18 @@ const Products = () => {
         <div className="col-md-3">
           <Skeleton height={350} width={299} />
         </div>
+        <div className="col-md-3">
+          <Skeleton height={350} width={299} />
+        </div>
+        <div className="col-md-3">
+          <Skeleton height={350} width={299} />
+        </div>
+        <div className="col-md-3">
+          <Skeleton height={350} width={299} />
+        </div>
+        <div className="col-md-3">
+          <Skeleton height={350} width={299} />
+        </div>
       </>
     );
   };

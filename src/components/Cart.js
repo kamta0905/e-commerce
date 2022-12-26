@@ -5,7 +5,6 @@ import Skeleton from "react-loading-skeleton";
 
 const Cart = () => {
   const state = useSelector((state) => state.handleCart);
-
   return (
     <div>
       <Header />
@@ -18,8 +17,8 @@ const Cart = () => {
                   <img src={state.image} alt={state.title} height="300px" width="400px" />
                 </div>
                 <div className="col-md-6 my-3 py-4" style={{ background: "#f7f3f3" }}>
-                  {/* <h4 className="text-uppercase text-black-50"> {state.category}</h4> */}
                   <h1 className="display-5">{state.title}</h1>
+                  <h4 className="text-uppercase text-black-50">$ {state.price}</h4>
                 </div>
               </>
             );

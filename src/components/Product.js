@@ -12,7 +12,9 @@ const Product = () => {
   const [loading, setLoading] = useState(false);
   const [cartBtn, setCartBtn] = useState("Add to Cart");
   const dispatch = useDispatch();
+
   const handleCart = (product) => {
+    console.log(product);
     if (cartBtn === "Add to Cart") {
       dispatch(addCart(product));
       setCartBtn("Remove from Cart");
@@ -57,7 +59,6 @@ const Product = () => {
         </div>
         <div className="col-md-6">
           <h4 className="text-uppercase text-black-50"> {product.category}</h4>
-
           <h1 className="display-5">{product.title}</h1>
           <p className="lead fw-bolder">
             {" "}
