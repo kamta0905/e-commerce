@@ -6,8 +6,31 @@ import { Route, Routes } from "react-router-dom";
 import Product from "./components/Product";
 import Home from "./components/Home";
 import { useSelector } from "react-redux";
+import axios from "axios";
+import { useEffect } from "react";
 
 function App() {
+  const loadData = async () => {
+    const res = axios.post(
+      "https://mobile.Orbitsys.com/OrbitsysSmbApiDemo/UsedCar/GetGeneralMaster",
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      },
+      {
+        brandCode: "UC",
+        countryCode: "IN",
+        companyId: "SUSHIL",
+        calledBy: "MAKE",
+        loginUserId: "RAVI",
+        loginIpAddress: "180.151.78.50",
+      }
+    );
+  };
+  useEffect(() => {
+    loadData();
+  }, []);
   return (
     <div className="App">
       <Routes>

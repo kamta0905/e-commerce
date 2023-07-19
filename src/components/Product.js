@@ -14,7 +14,6 @@ const Product = () => {
   const dispatch = useDispatch();
 
   const handleCart = (product) => {
-    console.log(product);
     if (cartBtn === "Add to Cart") {
       dispatch(addCart(product));
       setCartBtn("Remove from Cart");
@@ -23,6 +22,7 @@ const Product = () => {
       setCartBtn("Add to Cart");
     }
   };
+
   useEffect(() => {
     const getProduct = async () => {
       setLoading(true);
@@ -65,6 +65,7 @@ const Product = () => {
             Rating {product.rating && product.rating.rate} <i className="fa fa-star"></i>
           </p>
           <h3>$ {product.price}</h3>
+          <h3>Description</h3>
           <p className="lead">{product.description}</p>
           <Button variant="outline-dark" className="px-4 py-2" onClick={() => handleCart(product)}>
             {cartBtn}

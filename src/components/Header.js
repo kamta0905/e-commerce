@@ -10,8 +10,8 @@ const Header = () => {
     <div>
       <Navbar className="fixed-top" bg="light" expand="lg">
         <Container fluid>
-          <Navbar.Brand className="fw-bold fs-5" href="#">
-            Navbar scroll
+          <Navbar.Brand className="fw-bold fs-5" href="/">
+            Shopping Site
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -27,9 +27,11 @@ const Header = () => {
             <Form className="d-flex">
               {/* <Form.Control type="search" placeholder="Search" className="me-2" aria-label="Search" />
               <Button variant="outline-success">Search</Button> */}
-              <Link className={path.pathname === "/cart" ? "nav-link active ms-3" : "ms-3 nav-link"} to="/cart">
-                Cart({state?.length})
-              </Link>
+              <Nav>
+                <Link className={path.pathname === "/cart" ? "nav-link active ms-3" : "ms-3 nav-link"} to="/cart">
+                  Cart({state?.length})
+                </Link>
+              </Nav>
             </Form>
           </Navbar.Collapse>
         </Container>
